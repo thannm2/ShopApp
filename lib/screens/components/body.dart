@@ -21,7 +21,7 @@ class _BodyState extends State<Body> {
               flex: 3,
               child: PageView.builder(
                 itemBuilder:(context, index) => const SplashContent(
-                  image:"assets/image/login_light.png",
+                  image:"assets/images/login_light.png",
                   text:"Welcome to TOKYO shop, Lest's go",
                 ),
               )
@@ -30,6 +30,7 @@ class _BodyState extends State<Body> {
               flex: 2,
               child: SizedBox(),
             ),
+            Text('a')
           ],
         ),
       ),
@@ -55,17 +56,17 @@ class SplashContent extends StatelessWidget {
               const Spacer(flex: 3,),
               Text("TOKYO",
                   style:TextStyle(
-                    fontSize: getProportionateScreenWidth(36),
+                    fontSize: getProportionateScreenWidth(50),
                     color: kPrimaryColor,
                     fontWeight: FontWeight.bold,
                   )
               ),
-              const Text(text),
+               Text(text),
               const Spacer(flex: 2,),
               Image.asset(
                 image,
-                height: getProportionateScreenHeight(400),
-                width: getProportionateScreenWidth(365),
+                height: getProportionateScreenHeight(200),
+                width: getProportionateScreenWidth(200),
               )
             ],
           ),
