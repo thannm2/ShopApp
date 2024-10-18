@@ -10,6 +10,20 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  List<Map<String, String>> splashData = [
+    {
+      "text":"Welcome to TOKYO",
+      "image":"assets/images/login_light.png"
+    },
+    {
+      "text":"Welcome to TOKYO2",
+      "image":"assets/images/signUp_dark.png"
+    },
+    {
+      "text":"Welcome to TOKYO3",
+      "image":"assets/images/signUp_dark.png"
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return  SafeArea(
@@ -20,17 +34,18 @@ class _BodyState extends State<Body> {
             Expanded(
               flex: 3,
               child: PageView.builder(
-                itemBuilder:(context, index) => const SplashContent(
-                  image:"assets/images/login_light.png",
+                itemCount: splashData.length,
+                controller: PageController(initialPage: 0, keepPage: true, viewportFraction: 1),
+                itemBuilder:(context, index) => SplashContent(
+                  image: splashData[index]["image"]??"",
                   text:"Welcome to TOKYO shop, Lest's go",
                 ),
               )
             ),
-            const Expanded(
+             const Expanded(
               flex: 2,
               child: SizedBox(),
             ),
-            Text('a')
           ],
         ),
       ),
