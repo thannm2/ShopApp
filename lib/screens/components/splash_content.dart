@@ -9,6 +9,7 @@ class SplashContent extends StatelessWidget {
     required this.text,
     required this.image
   });
+  static String routeName = "/screens";
   final String text,image;
 
   @override
