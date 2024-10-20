@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:name_project/constands.dart';
 import 'package:name_project/screens/splash_screen.dart';
+import '../components/splash_content.dart';
 
 void main() {
   runApp(const MyApp());
