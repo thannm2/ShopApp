@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:name_project/constands.dart';
+import 'package:name_project/screens/sign_in/sign_in_screen.dart';
 import 'package:name_project/size_config.dart';
 import '../components/splash_content.dart';
 import '../components/defaultButton.dart';
@@ -70,7 +71,9 @@ class _BodyState extends State<Body> {
                     Spacer(flex: 3),
                     DefaultButton(
                       text: "Tiếp tục",
-                      press: () {},
+                      press: () {
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      },
                     ),
                     Spacer(),
                   ],
