@@ -60,7 +60,7 @@ class _BodyState extends State<Body> {
                 ),
                 child: Column(
                   children: <Widget>[
-                    Spacer(),
+                    const Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
@@ -68,14 +68,14 @@ class _BodyState extends State<Body> {
                             (index) => buildDot(index: index),
                       ),
                     ),
-                    Spacer(flex: 3),
+                    const Spacer(flex: 3),
                     DefaultButton(
                       text: "Tiếp tục",
                       press: () {
                         Navigator.pushNamed(context, SignInScreen.routeName);
                       },
                     ),
-                    Spacer(),
+                    const Spacer(),
                   ],
                 ),
               ),
@@ -88,11 +88,11 @@ class _BodyState extends State<Body> {
   AnimatedContainer buildDot({required int index}) {
     return AnimatedContainer(
       duration: kAnimationDuration,
-      margin: EdgeInsets.only(right: 5),
+      margin: const EdgeInsets.only(right: 5),
       height: 6,
       width: curentPage == index ? 20 : 6,
       decoration:  BoxDecoration(
-        color: curentPage == index ? kPrimaryColor: Color(0xFFD8D8D8),
+        color: curentPage == index ? kPrimaryColor: const Color(0xFFD8D8D8),
         borderRadius: BorderRadius.circular(3),
       ),
     );
@@ -101,7 +101,7 @@ class _BodyState extends State<Body> {
 
 
 class SplashContent extends StatelessWidget {
-   SplashContent({
+   const SplashContent({
     super.key,
     required this.text,
     required this.image
@@ -115,7 +115,7 @@ class SplashContent extends StatelessWidget {
           flex: 3,
           child: Column(
             children: <Widget>[
-               Spacer(flex: 3,),
+               const Spacer(flex: 3,),
               Text("TOKYO",
                   style:TextStyle(
                     fontSize: getProportionateScreenWidth(50),
@@ -127,7 +127,7 @@ class SplashContent extends StatelessWidget {
                  text,
                  textAlign: TextAlign.center,
                ),
-               Spacer(flex: 2,),
+               const Spacer(flex: 2,),
               Image.asset(
                 image,
                 height: getProportionateScreenHeight(200),
@@ -136,7 +136,7 @@ class SplashContent extends StatelessWidget {
             ],
           ),
         ),
-         Expanded(
+         const Expanded(
           flex: 2,
           child: SizedBox(),
         ),
