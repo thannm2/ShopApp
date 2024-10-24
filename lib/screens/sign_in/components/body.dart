@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:name_project/constands.dart';
 import '../../../size_config.dart';
 
@@ -44,7 +45,7 @@ class SignForm extends StatefulWidget {
 class _SignFormState extends State<SignForm> {
   @override
   Widget build(BuildContext context) {
-    return const Form(
+    return Form(
       child: Column(
         children: [
           TextField(
@@ -52,6 +53,13 @@ class _SignFormState extends State<SignForm> {
               labelText: "Email",
               hintText: "Nhập email",
               floatingLabelBehavior: FloatingLabelBehavior.always,
+              suffixIcon: Align(
+                widthFactor: 1.0,
+                heightFactor: 1.0,
+                child: Icon(
+                  Icons.account_balance_wallet,
+                ),
+              ),
             )
           ),
         ],

@@ -16,23 +16,19 @@ ThemeData theme(){
 }
 
 InputDecorationTheme inputDecorationTheme() {
+  var outlineInputBorder = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(28),
+      borderSide: BorderSide(color: kTextColor),
+      gapPadding: 10,
+    );
   return InputDecorationTheme(
-
     floatingLabelBehavior: FloatingLabelBehavior.always,
     contentPadding: EdgeInsets.symmetric(
       horizontal: 42,
       vertical: 20,
     ),
-    enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(28),
-      borderSide: BorderSide(color: kTextColor),
-      gapPadding: 10,
-    ),
-    focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(28),
-      borderSide: BorderSide(color: kTextColor),
-      gapPadding: 10,
-    ),
+    enabledBorder: outlineInputBorder,
+    focusedBorder: outlineInputBorder,
   );
 }
 
