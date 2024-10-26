@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:name_project/constands.dart';
 import '../../../size_config.dart';
@@ -53,14 +54,14 @@ class _SignFormState extends State<SignForm> {
               labelText: "Email",
               hintText: "Nhập email",
               floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon: Align(
-                widthFactor: 1.0,
-                heightFactor: 1.0,
-                child: Icon(
-                  Icons.account_balance_wallet,
+              suffixIcon: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SvgPicture.asset(
+                  "assets/icons/Message.svg",
+                  height: 18,
                 ),
               ),
-            )
+             ),
           ),
         ],
       ),
