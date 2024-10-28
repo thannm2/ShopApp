@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
-import 'package:name_project/constands.dart';
+import '../../../components/custom_suffix_icon.dart';
 import '../../../size_config.dart';
-
+import '../../components/defaultButton.dart';
 class Body extends StatelessWidget {
   const Body({super.key});
 
@@ -49,23 +47,47 @@ class _SignFormState extends State<SignForm> {
     return Form(
       child: Column(
         children: [
-          TextField(
-            decoration:InputDecoration(
-              labelText: "Email",
-              hintText: "Nhập email",
-              floatingLabelBehavior: FloatingLabelBehavior.always,
-              suffixIcon: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset(
-                  "assets/icons/Message.svg",
-                  height: 18,
-                ),
-              ),
-             ),
-          ),
+          buildEmailFormField(),
+          SizedBox(height: getProportionateScreenHeight(20)),
+          buildPasswordFormField(),
+          SizedBox(height: getProportionateScreenHeight(20)),
+          DefaultButton(
+            text:"Tiếp tục",
+            press: (){},
+          )
         ],
       ),
     );
   }
+
+  TextField buildPasswordFormField() {
+    return TextField(
+          obscureText: true,
+          decoration:InputDecoration(
+            labelText: "Mật khẩu",
+            hintText: "Nhập mật khẩu",
+            floatingLabelBehavior: FloatingLabelBehavior.always,
+            suffixIcon: CustomSuffixIcon(
+              svgIcon:  "assets/icons/Lock.svg",
+            ),
+          ),
+        );
+  }
+
+  TextField buildEmailFormField() {
+    return TextField(
+          keyboardType: TextInputType.emailAddress,
+          decoration:InputDecoration(
+            labelText: "Email",
+            hintText: "Nhập email",
+            floatingLabelBehavior: FloatingLabelBehavior.always,
+            suffixIcon: CustomSuffixIcon(
+              svgIcon:  "assets/icons/Message.svg",
+            ),
+           ),
+        );
+  }
 }
+
+
 
